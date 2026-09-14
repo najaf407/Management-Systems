@@ -7,7 +7,7 @@ import TeacherSideBar from './TeacherSideBar'
 const Sidebar = () => {
     return (
         <>
-            <div className='w-2/11 flex overflow-y-auto hide-scrollbar'>
+            <div className='max-w-75 w-full flex overflow-y-auto hide-scrollbar'>
                 <div className='h-fit w-full bg-gradient-to-b from-[#5f83ed] via-[#3f6fe7] to-[#2359de]'>
                     <div className='pt-8'><img src={LogoSvg} alt="" className='h-20 w-85 pl-4' /></div>
                     <div className='pl-5 pr-6 mt-6'>

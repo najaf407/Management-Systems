@@ -1,5 +1,5 @@
 import React from 'react'
-import { Clock, CalendarCheck, BookOpenCheck, FileText, ChartColumnIncreasing } from 'lucide-react'
+import { Clock, CalendarCheck, BookOpenCheck, FileText, ChartColumnIncreasing, GraduationCap } from 'lucide-react'
 
 
 const StudentSidebar = () => {
@@ -13,19 +13,22 @@ const StudentSidebar = () => {
         <span className="h-[0.5px] flex-1 bg-white"></span>
       </div>
       <p className='text-white font-medium text-lg flex my-4 gap-2 items-center py-1 px-3 rounded-lg'>
-  <ChartColumnIncreasing />
+        <ChartColumnIncreasing />
         Overview</p>
       <p className='text-white font-medium text-lg my-4 flex gap-2 items-center py-1 px-3 rounded-lg'>
-       <FileText />
+        <FileText />
         Assignments</p>
       <p className='text-white font-medium text-lg flex gap-2 items-center py-1 px-3 rounded-lg'>
         <BookOpenCheck />
         Tests & Exams</p>
       <p className='text-white font-medium text-lg my-4 flex gap-2 items-center py-1 px-3 rounded-lg'>
-        <CalendarCheck/>
+        <CalendarCheck />
         Attendance</p>
+      <p className='text-white font-medium text-lg flex gap-2 items-center py-1 px-3 rounded-lg'>
+        <GraduationCap />
+        Teachers</p>
       <p className='text-white font-medium text-lg my-4 flex gap-2 items-center py-1 px-3 rounded-lg'>
-       <Clock />
+        <Clock />
         Shedule</p>
     </>
   )
