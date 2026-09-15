@@ -11,8 +11,7 @@ const Sidebar = () => {
                 <div className='h-fit w-full bg-gradient-to-b from-[#5f83ed] via-[#3f6fe7] to-[#2359de]'>
                     <div className='pt-8'><img src={LogoSvg} alt="" className='h-20 w-85 pl-4' /></div>
                     <div className='pl-5 pr-6 mt-6'>
-                        <StudentSidebar />
-                        <TeacherSideBar/>
+                        <TeacherSideBar />
                         <div className="flex gap-3 items-center mb-4 ml-2">
                             <span className="text-xs text-white uppercase">
                                 Other

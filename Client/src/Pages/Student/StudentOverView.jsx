@@ -52,7 +52,7 @@ const StudentOverView = () => {
                     <table className="w-full text-left border-collapse" table='1'>
 
                         <thead>
-                            <tr className="text-[#2359de] bg-[#5cffc3]">
+                            <tr className="text-[#2359de]">
                                 <th className="px-4 py-2 font-medium">Date</th>
                                 <th className="px-4 py-2 font-medium">Subject</th>
                                 <th className="px-4 py-2 font-medium">Activity</th>
