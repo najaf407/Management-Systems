@@ -4,111 +4,144 @@ import { CalendarCheck, ArrowRight, BookOpenCheck, FileText, ShieldCheck, Clock,
 
 const TeacherOverView = () => {
     return (
-        <div className='w-290 mx-auto my-10'>
-            <div className=''>
-                <h1 className='text-4xl font-semibold'>Hello, Sir Alex!</h1>
-                <p className='my-4 text-gray-700'>Here's what's happening with your studies.</p>
-            </div>
-            <div className='min-w-0 w-full my-8 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-5'>
-                <div className='h-70 bg-[#d9e4ff]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <CalendarCheck className='text-white size-12 bg-[#3f6fe7] p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Classes Conducted</h1>
-                        <h2 className='text-5xl font-medium'>95%</h2>
-                        <h4 className='text-sm text-gray-700'>Conducted Classes : 55/60</h4>
-                        <h6 className='text-blue-600 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
-                <div className='h-full bg-[#ecd9fc]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <BookOpenCheck className='text-white size-12 bg-purple-500 p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Test Evaluation / Exam Invigilation</h1>
-                        <h2 className='text-3xl font-medium'>1 Upcomming</h2>
-                        <h4 className='text-sm text-gray-700'>Gravtational Potentail (physics) 9th-B</h4>
-                        <h6 className='text-purple-500 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
-                <div className='h-full bg-[#e7ffe6]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <FileText className='text-white size-12 bg-green-500 p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Assignments Review</h1>
-                        <h2 className='text-3xl font-medium'>2 Pending</h2>
-                        <h4 className='text-sm text-gray-700'>3/5 Assignment Checked</h4>
-                        <h6 className='text-green-500 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
-            </div>
-            <div className='h-fit my-8 min-w-40 w-full bg-[#72fcca]/60 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                <div className='p-6'>
-                    <h1 className='text-3xl font-semibold flex gap-2 items-center mb-4'><Clock className='text-white size-12 bg-[#00d688] p-2 rounded-[50%]' />Upcomming Shedule</h1>
-                    <table className="w-full text-left border-collapse" table='1'>
+        <div className='w-full max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-0 my-6 sm:my-10'>
 
-                        <thead>
-                            <tr className="text-[#2359de]">
-                                <th className="px-4 py-2 font-medium">Date</th>
-                                <th className="px-4 py-2 font-medium">Subject</th>
-                                <th className="px-4 py-2 font-medium">Activity</th>
-                                <th className="px-4 py-2 font-medium">Class</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="">
-                                <td className="px-4 py-2">12/12/2024</td>
-                                <td className="px-4 py-2">Maths</td>
-                                <td className="px-4 py-2">Test</td>
-                                <td className="px-4 py-2">10-A</td>
-                            </tr>
-                            <tr className="">
-                                <td className="px-4 py-2">12/12/2024</td>
-                                <td className="px-4 py-2">English</td>
-                                <td className="px-4 py-2">Assignment</td>
-                                <td className="px-4 py-2">9-C</td>
-                            </tr>
-                            <tr className="">
-                                <td className="px-4 py-2">13/12/2024</td>
-                                <td className="px-4 py-2">English</td>
-                                <td className="px-4 py-2">Examiner</td>
-                                <td className="px-4 py-2">Room-3</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button className='text-[16px] text-blue-500 cursor-pointer flex gap-1 items-center w-fit px-3 py-1 ml-auto mr-4 mt-4 '>View Full Shedule <ArrowRight className='size-4 mt-1' /></button>
+            {/* Greeting */}
+            <div>
+                <h1 className='text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900'>Hello, Sir Alex!</h1>
+                <p className='mt-2 mb-6 sm:mb-8 text-gray-500 text-sm sm:text-base'>Here's what's happening with your studies.</p>
+            </div>
+
+            {/* Stat cards */}
+            <div className='min-w-0 w-full mb-6 sm:mb-8 grid grid-cols-1 lg:grid-cols-3 gap-4'>
+                {[
+                    { icon: CalendarCheck, label: "Classes Conducted", value: "95%", sub: "Conducted Classes : 55/60", bg: "bg-blue-50", iconColor: "text-blue-600" },
+                    { icon: BookOpenCheck, label: "Test Evaluation / Exam Invigilation", value: "1 Upcomming", sub: "Gravtational Potentail (physics) 9th-B", bg: "bg-violet-50", iconColor: "text-violet-600" },
+                    { icon: FileText, label: "Assignments Review", value: "2 Pending", sub: "3/5 Assignment Checked", bg: "bg-emerald-50", iconColor: "text-emerald-600" },
+                ].map((card, i) => (
+                    <div key={i} className={`${card.bg} border border-black/5 rounded-xl p-5 hover:shadow-md transition-shadow`}>
+                        <div className={`inline-flex ${card.iconColor} bg-white size-10 rounded-lg items-center justify-center shadow-sm`}>
+                            <card.icon className='size-5' strokeWidth={2} />
+                        </div>
+                        <h4 className='text-gray-600 text-sm mt-4'>{card.label}</h4>
+                        <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900 mt-1'>{card.value}</h2>
+                        <p className='text-xs text-gray-500 mt-1'>{card.sub}</p>
+                        <p className={`${card.iconColor} text-sm font-medium flex gap-1 items-center mt-4`}>
+                            View Details<ArrowRight className='size-3.5' />
+                        </p>
+                    </div>
+                ))}
+            </div>
+
+            {/* Upcoming schedule */}
+            <div className='mb-6 sm:mb-8 w-full bg-emerald-50 border border-black/5 rounded-xl'>
+                <div className='p-4 sm:p-6'>
+                    <div className="flex items-center justify-between mb-5">
+                        <h1 className='text-lg sm:text-xl font-semibold text-gray-900 flex gap-2.5 items-center'>
+                            <div className="bg-emerald-600 text-white size-9 rounded-full flex items-center justify-center shrink-0">
+                                <Clock className='size-5' strokeWidth={2} />
+                            </div>
+                            Upcoming Schedule
+                        </h1>
+                        <button className='hidden sm:flex text-sm text-emerald-700 font-medium gap-1 items-center'>
+                            View All <ArrowRight className='size-3.5' />
+                        </button>
+                    </div>
+
+                    <div className="hidden sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-4 px-4 pb-2 text-emerald-700 text-xs font-semibold uppercase tracking-wide">
+                        <span>Date</span>
+                        <span>Subject</span>
+                        <span>Activity</span>
+                        <span>Class</span>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        {[
+                            { date: "12/12/2024", subject: "Maths", activity: "Test", cls: "10-A" },
+                            { date: "12/12/2024", subject: "English", activity: "Assignment", cls: "9-C" },
+                            { date: "13/12/2024", subject: "English", activity: "Examiner", cls: "Room-3" },
+                        ].map((item, i) => (
+                            <div
+                                key={i}
+                                className="bg-white/80 hover:bg-white transition-colors rounded-lg
+                                   p-3.5 sm:px-4 sm:py-3
+                                   flex items-center justify-between
+                                   sm:grid sm:grid-cols-[1fr_1fr_1fr_1fr] sm:gap-4"
+                            >
+                                <div className="sm:hidden">
+                                    <p className="font-medium text-gray-900 text-sm">{item.subject}</p>
+                                    <p className="text-xs text-gray-500 mt-0.5">{item.activity} · {item.cls}</p>
+                                </div>
+
+                                <span className="hidden sm:block text-sm text-gray-600">{item.date}</span>
+                                <span className="hidden sm:block text-sm font-medium text-gray-900">{item.subject}</span>
+                                <span className="hidden sm:block text-sm text-gray-600">{item.activity}</span>
+                                <span className="hidden sm:block text-sm text-gray-600">{item.cls}</span>
+
+                                <p className="sm:hidden text-xs font-medium text-emerald-700 shrink-0 ml-3">{item.date}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className='sm:hidden text-sm text-emerald-700 font-medium flex gap-1 items-center mt-4 mx-auto'>
+                        View Full Schedule <ArrowRight className='size-3.5' />
+                    </button>
                 </div>
             </div>
-            <div className='h-fit my-8 min-w-40 w-full bg-[#d9e4ff]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                <div className='p-5'>
-                    <h1 className='text-3xl font-semibold flex gap-2 items-center mb-4'><UsersRound className='text-white size-12 bg-[#3f6fe7] p-2 rounded-[50%]' />Students</h1>
-                    <table className="w-full text-left border-collapse" table='1'>
-                        <thead>
-                            <tr className="text-[#2359de]">
-                                <th className="px-4 py-2 font-medium">Roll No.</th>
-                                <th className="px-4 py-2 font-medium">Name</th>
-                                <th className="px-4 py-2 font-medium">Attendance</th>
-                                <th className="px-4 py-2 font-medium">Academic Progress</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="">
-                                <td className="px-4 py-2">88756</td>
-                                <td className="px-4 py-2">Ali Raza</td>
-                                <td className="px-4 py-2">17/22</td>
-                                <td className="px-4 py-2">90%</td>
-                            </tr>
-                            <tr className="">
-                                <td className="px-4 py-2">80664</td>
-                                <td className="px-4 py-2">Farhan Yousaf</td>
-                                <td className="px-4 py-2">16/22</td>
-                                <td className="px-4 py-2">79%</td>
-                            </tr>
-                            <tr className="">
-                                <td className="px-4 py-2">80647</td>
-                                <td className="px-4 py-2">Ali Usman</td>
-                                <td className="px-4 py-2">20/22</td>
-                                <td className="px-4 py-2">93%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button className='text-[16px] text-blue-500 cursor-pointer flex gap-1 items-center w-fit px-3 py-1 ml-auto mr-4 mt-4 '>View All<ArrowRight className='size-4 mt-1' /></button>
+
+            {/* Students */}
+            <div className='mb-6 sm:mb-8 w-full bg-blue-50 border border-black/5 rounded-xl'>
+                <div className='p-4 sm:p-6'>
+                    <div className="flex items-center justify-between mb-5">
+                        <h1 className='text-lg sm:text-xl font-semibold text-gray-900 flex gap-2.5 items-center'>
+                            <div className="bg-[#2359de] text-white size-9 rounded-full flex items-center justify-center shrink-0">
+                                <UsersRound className='size-5' strokeWidth={2} />
+                            </div>
+                            Students
+                        </h1>
+                        <button className='hidden sm:flex text-sm text-[#2359de] font-medium gap-1 items-center'>
+                            View All <ArrowRight className='size-3.5' />
+                        </button>
+                    </div>
+
+                    <div className="hidden sm:grid grid-cols-[1fr_2fr_1fr_1fr] gap-4 px-4 pb-2 text-[#2359de] text-xs font-semibold uppercase tracking-wide">
+                        <span>Roll No.</span>
+                        <span>Name</span>
+                        <span>Attendance</span>
+                        <span>Academic Progress</span>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        {[
+                            { roll: "88756", name: "Ali Raza", attendance: "17/22", progress: "90%" },
+                            { roll: "80664", name: "Farhan Yousaf", attendance: "16/22", progress: "79%" },
+                            { roll: "80647", name: "Ali Usman", attendance: "20/22", progress: "93%" },
+                        ].map((s, i) => (
+                            <div
+                                key={i}
+                                className="bg-white/80 hover:bg-white transition-colors rounded-lg
+                                   p-3.5 sm:px-4 sm:py-3
+                                   flex items-center justify-between
+                                   sm:grid sm:grid-cols-[1fr_2fr_1fr_1fr] sm:gap-4"
+                            >
+                                <div className="sm:hidden">
+                                    <p className="font-medium text-gray-900 text-sm">{s.name}</p>
+                                    <p className="text-xs text-gray-500 mt-0.5">Roll {s.roll} · Attendance {s.attendance}</p>
+                                </div>
+
+                                <span className="hidden sm:block text-sm text-gray-600">{s.roll}</span>
+                                <span className="hidden sm:block text-sm font-medium text-gray-900">{s.name}</span>
+                                <span className="hidden sm:block text-sm text-gray-600">{s.attendance}</span>
+                                <span className="hidden sm:block text-sm text-gray-600">{s.progress}</span>
+
+                                <p className="sm:hidden text-xs font-medium text-[#2359de] shrink-0 ml-3">{s.progress}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className='sm:hidden text-sm text-[#2359de] font-medium flex gap-1 items-center mt-4 mx-auto'>
+                        View All <ArrowRight className='size-3.5' />
+                    </button>
                 </div>
             </div>
         </div>

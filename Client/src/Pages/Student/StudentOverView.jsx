@@ -3,185 +3,150 @@ import { CalendarCheck, ArrowRight, BookOpenCheck, FileText, ShieldCheck, Clock,
 
 const StudentOverView = () => {
     return (
-        <div className='w-290 mx-auto'>
-            <div className='mt-10'>
-                <h1 className='text-4xl font-semibold'>Hello, Abdul Ahad!</h1>
-                <p className='my-4 text-gray-700'>Here's what's happening with your studies.</p>
+       <div className='w-full max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-0'>
+
+    {/* Greeting */}
+    <div className='mt-6 sm:mt-10'>
+        <h1 className='text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900'>Hello, Abdul Ahad!</h1>
+        <p className='mt-2 mb-6 sm:mb-8 text-gray-500 text-sm sm:text-base'>Here's what's happening with your studies.</p>
+    </div>
+
+    {/* Stat cards */}
+    <div className='min-w-0 w-full mb-6 sm:mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+        {[
+            { icon: CalendarCheck, label: "Attendance", value: "92%", sub: "Present Days: 23/25", bg: "bg-blue-50", iconColor: "text-blue-600" },
+            { icon: BookOpenCheck, label: "Tests & Exams", value: "3 Upcoming", sub: "76% Performance", bg: "bg-violet-50", iconColor: "text-violet-600" },
+            { icon: FileText, label: "Assignments", value: "2 Pending", sub: "This Week: 2 Completed", bg: "bg-emerald-50", iconColor: "text-emerald-600" },
+            { icon: ShieldCheck, label: "Discipline", value: "Excellent", sub: "No Issues", bg: "bg-orange-50", iconColor: "text-orange-600" },
+        ].map((card, i) => (
+            <div key={i} className={`${card.bg} border border-black/5 rounded-xl p-5 hover:shadow-md transition-shadow`}>
+                <div className={`inline-flex ${card.iconColor} bg-white size-10 rounded-lg items-center justify-center shadow-sm`}>
+                    <card.icon className='size-5' strokeWidth={2} />
+                </div>
+                <h4 className='text-gray-600 text-sm mt-4'>{card.label}</h4>
+                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900 mt-1'>{card.value}</h2>
+                <p className='text-xs text-gray-500 mt-1'>{card.sub}</p>
+                <p className={`${card.iconColor} text-sm font-medium flex gap-1 items-center mt-4`}>
+                    View Details<ArrowRight className='size-3.5' />
+                </p>
             </div>
-            <div className='min-w-0 w-full my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'>
-                <div className='h-70 bg-[#d9e4ff]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <CalendarCheck className='text-white size-12 bg-[#3f6fe7] p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Attendance</h1>
-                        <h2 className='text-5xl font-medium'>92%</h2>
-                        <h4 className='text-sm text-gray-700'>Present Days : 23/25</h4>
-                        <h6 className='text-blue-600 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
+        ))}
+    </div>
+
+    {/* Upcoming schedule */}
+    <div className='mb-6 sm:mb-8 w-full bg-emerald-50 border border-black/5 rounded-xl'>
+        <div className='p-4 sm:p-6'>
+            <div className="flex items-center justify-between mb-5">
+                <h1 className='text-lg sm:text-xl font-semibold text-gray-900 flex gap-2.5 items-center'>
+                    <div className="bg-emerald-600 text-white size-9 rounded-full flex items-center justify-center shrink-0">
+                        <Clock className='size-5' strokeWidth={2} />
                     </div>
-                </div>
-                <div className='h-full bg-[#ecd9fc]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <BookOpenCheck className='text-white size-12 bg-purple-500 p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Tests & Exams</h1>
-                        <h2 className='text-3xl font-medium'>3 Upcomming</h2>
-                        <h4 className='text-sm text-gray-700'>76% Performance</h4>
-                        <h6 className='text-purple-500 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
-                <div className='h-full bg-[#e7ffe6]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <FileText className='text-white size-12 bg-green-500 p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Assignments</h1>
-                        <h2 className='text-3xl font-medium'>2 Pending</h2>
-                        <h4 className='text-sm text-gray-700'>This Week 2 Completed</h4>
-                        <h6 className='text-green-500 text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
-                <div className='h-full bg-[#ffd9d9]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                    <div className='w-full h-full flex flex-col justify-evenly ml-4'>
-                        <ShieldCheck className='text-white size-12 bg-[#fc6621] p-2 rounded-[50%]' />
-                        <h1 className='text-xl font-medium'>Discipline</h1>
-                        <h2 className='text-3xl font-medium'>Excellent</h2>
-                        <h4 className='text-sm text-gray-700'>No Issues</h4>
-                        <h6 className='text-[#fc6621] text-[16px] font-medium flex gap-2 items-center'>View Details<ArrowRight className='size-4 mt-1' /></h6>
-                    </div>
-                </div>
+                    Upcoming Schedule
+                </h1>
+                <button className='hidden sm:flex text-sm text-emerald-700 font-medium gap-1 items-center'>
+                    View All <ArrowRight className='size-3.5' />
+                </button>
             </div>
-            <div className='h-fit my-8 min-w-40 w-full bg-[#72fcca]/60 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                <div className='p-6'>
-                    <h1 className='text-3xl font-semibold flex gap-2 items-center mb-4'><Clock className='text-white size-12 bg-[#00d688] p-2 rounded-[50%]' />Upcomming Shedule</h1>
-                    <table className="w-full text-left border-collapse" table='1'>
 
-                        <thead>
-                            <tr className="text-[#2359de]">
-                                <th className="px-4 py-2 font-medium">Date</th>
-                                <th className="px-4 py-2 font-medium">Subject</th>
-                                <th className="px-4 py-2 font-medium">Activity</th>
-                                <th className="px-4 py-2 font-medium">Teacher</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr className="">
-                                <td className="px-4 py-2">12/12/2024</td>
-                                <td className="px-4 py-2">Maths</td>
-                                <td className="px-4 py-2">Test</td>
-                                <td className="px-4 py-2">Mr. John</td>
-                            </tr>
-
-                            <tr className="">
-                                <td className="px-4 py-2">12/12/2024</td>
-                                <td className="px-4 py-2">English</td>
-                                <td className="px-4 py-2">Assignment</td>
-                                <td className="px-4 py-2">Mr. Alex</td>
-                            </tr>
-
-                            <tr className="">
-                                <td className="px-4 py-2">13/12/2024</td>
-                                <td className="px-4 py-2">English</td>
-                                <td className="px-4 py-2">Re Paper</td>
-                                <td className="px-4 py-2">IT Office</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                    <button className='text-[16px] text-blue-500 cursor-pointer flex gap-1 items-center w-fit px-3 py-1 ml-auto mr-4 mt-4 '>View Full Shedule <ArrowRight className='size-4 mt-1' /></button>
-                </div>
+            <div className="hidden sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-4 px-4 pb-2 text-emerald-700 text-xs font-semibold uppercase tracking-wide">
+                <span>Date</span>
+                <span>Subject</span>
+                <span>Activity</span>
+                <span>Teacher</span>
             </div>
-            <div className='h-fit my-8 min-w-40 w-full bg-[#d9e4ff]/80 backdrop-blur-lg border border-white/30 shadow-sm rounded-xl'>
-                <div className='p-5'>
-                    <h1 className='text-3xl font-semibold flex gap-2 items-center mb-4'><GraduationCap className='text-white size-12 bg-[#3f6fe7] p-2 rounded-[50%]' />Teachers</h1>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
-                        <div className="h-fit max-w-sm bg-white border border-gray-200 shadow-sm rounded-xl p-5">
-                            <div>
-                                <div className="h-20 w-20 rounded-full border-2 border-[#3f6fe7] overflow-hidden">
-                                    <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7VlYn2zD-DTDtmWkoWkADPxtU0VvbiCF_bxlln-hOiw&s=10"
-                                        alt="Mr. John"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <h2 className="mt-4 text-2xl font-semibold text-gray-900">
-                                    Mr. John
-                                </h2>
-                                <h4 className="mt-2 flex items-center gap-2 text-gray-500 text-base">
-                                    <BookOpen className="w-5 h-5 text-[#3f6fe7]" />
-                                    Mathematics / Stats
-                                </h4>
-                                <div className="w-full h-px bg-gray-200 my-5"></div>
-                                <div className="flex gap-2">
-                                    <button className="flex-1 flex items-center justify-center gap-2 bg-[#3f6fe7] text-white px-4 py-2.5 rounded-lg text-sm font-medium">
-                                        <MessageCircle className="w-4 h-4" />
-                                        Message
-                                    </button>
-                                    <button className="flex-1 flex items-center justify-center gap-2 border border-[#3f6fe7] text-[#3f6fe7] px-4 py-2.5 rounded-lg text-sm font-medium ">
-                                        <UserRound className="w-4 h-4" />
-                                        View Profile
-                                    </button>
-                                </div>
-                            </div>
+
+            <div className="flex flex-col gap-2">
+                {[
+                    { date: "12/12/2024", subject: "Maths", activity: "Test", teacher: "Mr. John" },
+                    { date: "12/12/2024", subject: "English", activity: "Assignment", teacher: "Mr. Alex" },
+                    { date: "13/12/2024", subject: "English", activity: "Re Paper", teacher: "IT Office" },
+                ].map((item, i) => (
+                    <div
+                        key={i}
+                        className="bg-white/80 hover:bg-white transition-colors rounded-lg
+                                   p-3.5 sm:px-4 sm:py-3
+                                   flex items-center justify-between
+                                   sm:grid sm:grid-cols-[1fr_1fr_1fr_1fr] sm:gap-4"
+                    >
+                        <div className="sm:hidden">
+                            <p className="font-medium text-gray-900 text-sm">{item.subject}</p>
+                            <p className="text-xs text-gray-500 mt-0.5">{item.activity} · {item.teacher}</p>
                         </div>
-                        <div className="h-fit max-w-sm bg-white border border-gray-200 shadow-sm rounded-xl p-5">
-                            <div>
-                                <div className="h-20 w-20 rounded-full border-2 border-[#3f6fe7] overflow-hidden">
-                                    <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzoWp5mOOFqWCTNd69vTSh4TDcFThleFbAlGKFCHb21w&s=10"
-                                        alt="Mr. John"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <h2 className="mt-4 text-2xl font-semibold text-gray-900">
-                                    Mr. Alex
-                                </h2>
-                                <h4 className="mt-2 flex items-center gap-2 text-gray-500 text-base">
-                                    <BookOpen className="w-5 h-5 text-[#3f6fe7]" />
-                                    English
-                                </h4>
-                                <div className="w-full h-px bg-gray-200 my-5"></div>
-                                <div className="flex gap-2">
-                                    <button className="flex-1 flex items-center justify-center gap-2 bg-[#3f6fe7] text-white px-4 py-2.5 rounded-lg text-sm font-medium">
-                                        <MessageCircle className="w-4 h-4" />
-                                        Message
-                                    </button>
-                                    <button className="flex-1 flex items-center justify-center gap-2 border border-[#3f6fe7] text-[#3f6fe7] px-4 py-2.5 rounded-lg text-sm font-medium ">
-                                        <UserRound className="w-4 h-4" />
-                                        View Profile
-                                    </button>
-                                </div>
-                            </div>
+
+                        <span className="hidden sm:block text-sm text-gray-600">{item.date}</span>
+                        <span className="hidden sm:block text-sm font-medium text-gray-900">{item.subject}</span>
+                        <span className="hidden sm:block text-sm text-gray-600">{item.activity}</span>
+                        <span className="hidden sm:block text-sm text-gray-600">{item.teacher}</span>
+
+                        <p className="sm:hidden text-xs font-medium text-emerald-700 shrink-0 ml-3">{item.date}</p>
+                    </div>
+                ))}
+            </div>
+
+            <button className='sm:hidden text-sm text-emerald-700 font-medium flex gap-1 items-center mt-4 mx-auto'>
+                View Full Schedule <ArrowRight className='size-3.5' />
+            </button>
+        </div>
+    </div>
+
+    {/* Teachers */}
+    <div className='mb-6 sm:mb-8 w-full bg-blue-50 border border-black/5 rounded-xl'>
+        <div className='p-4 sm:p-6'>
+            <h1 className='text-lg sm:text-xl font-semibold text-gray-900 flex gap-2.5 items-center mb-5'>
+                <div className="bg-[#2359de] text-white size-9 rounded-full flex items-center justify-center shrink-0">
+                    <GraduationCap className='size-5' strokeWidth={2} />
+                </div>
+                Teachers
+            </h1>
+
+            <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4'>
+                {[
+                    { name: "Mr. John", subject: "Mathematics / Stats", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7VlYn2zD-DTDtmWkoWkADPxtU0VvbiCF_bxlln-hOiw&s=10" },
+                    { name: "Mr. Alex", subject: "English", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzoWp5mOOFqWCTNd69vTSh4TDcFThleFbAlGKFCHb21w&s=10" },
+                    { name: "Madam Sarah", subject: "Chemistry", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOO8Bsa6_OfoXCDOiAbE9HEiD_oQJXxbDf1uhoI4Xlww&s=10" },
+                ].map((teacher, i) => (
+                    <div
+                        key={i}
+                        className="w-full bg-white border border-black/5 rounded-xl hover:shadow-md transition-shadow
+                                   p-3 sm:p-4 flex items-center gap-3 sm:block"
+                    >
+                        <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-full overflow-hidden shrink-0 ring-2 ring-blue-100">
+                            <img src={teacher.img} alt={teacher.name} className="w-full h-full object-cover" />
                         </div>
-                        <div className="h-fit max-w-sm bg-white border border-gray-200 shadow-sm rounded-xl p-5">
-                            <div>
-                                <div className="h-20 w-20 rounded-full border-2 border-[#3f6fe7] overflow-hidden">
-                                    <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOO8Bsa6_OfoXCDOiAbE9HEiD_oQJXxbDf1uhoI4Xlww&s=10"
-                                        alt="Mr. John"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <h2 className="mt-4 text-2xl font-semibold text-gray-900">
-                                    Madam Sarah
-                                </h2>
-                                <h4 className="mt-2 flex items-center gap-2 text-gray-500 text-base">
-                                    <BookOpen className="w-5 h-5 text-[#3f6fe7]" />
-                                    Chemistry
-                                </h4>
-                                <div className="w-full h-px bg-gray-200 my-5"></div>
-                                <div className="flex gap-2">
-                                    <button className="flex-1 flex items-center justify-center gap-2 bg-[#3f6fe7] text-white px-4 py-2.5 rounded-lg text-sm font-medium">
-                                        <MessageCircle className="w-4 h-4" />
-                                        Message
-                                    </button>
-                                    <button className="flex-1 flex items-center justify-center gap-2 border border-[#3f6fe7] text-[#3f6fe7] px-4 py-2.5 rounded-lg text-sm font-medium ">
-                                        <UserRound className="w-4 h-4" />
-                                        View Profile
-                                    </button>
-                                </div>
-                            </div>
+
+                        <div className="flex-1 min-w-0 sm:mt-3">
+                            <h2 className="text-sm sm:text-base font-semibold text-gray-900 truncate">{teacher.name}</h2>
+                            <h4 className="mt-0.5 flex items-center gap-1.5 text-gray-500 text-xs sm:text-sm">
+                                <BookOpen className="hidden sm:block w-3.5 h-3.5 shrink-0 text-[#2359de]" strokeWidth={2} />
+                                <span className="truncate">{teacher.subject}</span>
+                            </h4>
+                        </div>
+
+                        <div className="flex sm:hidden gap-1.5 shrink-0">
+                            <button className="p-2 bg-[#2359de] text-white rounded-lg">
+                                <MessageCircle className="w-3.5 h-3.5" />
+                            </button>
+                            <button className="p-2 border border-gray-300 text-gray-600 rounded-lg">
+                                <UserRound className="w-3.5 h-3.5" />
+                            </button>
+                        </div>
+
+                        <div className="hidden sm:flex gap-2 mt-4">
+                            <button className="flex-1 flex items-center justify-center gap-1.5 bg-[#2359de] text-white px-2 py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap">
+                                <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+                                Message
+                            </button>
+                            <button className="flex-1 flex items-center justify-center gap-1.5 border border-gray-300 text-gray-600 px-2 py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap">
+                                <UserRound className="w-3.5 h-3.5 shrink-0" />
+                                Profile
+                            </button>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
+    </div>
+</div>
     )
 }
 
