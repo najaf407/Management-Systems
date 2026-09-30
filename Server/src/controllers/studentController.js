@@ -6,7 +6,9 @@ const RegisterStudent = async (req, res) => {
     const { Name, Class, RollNo, Password } = req.body;
 
     let IfStudentExist = await StudentModel.findOne({ RollNo });
-    if (IfStudentExist) return res.status(409).json({ message: "! Student already exist with this RollNo" });
+    if (IfStudentExist) {
+      return res.status(409).json({ message: "! Student already Registered with this RollNo" })
+    };
 
     const hashedPassword = await bcrypt.hash(Password, 10);
 
@@ -16,8 +18,6 @@ const RegisterStudent = async (req, res) => {
       RollNo: RollNo,
       Password: hashedPassword,
     });
-
-    await Student.save()
 
     res.status(201).json({ message: "Student Registered" })
 

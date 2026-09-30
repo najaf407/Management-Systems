@@ -98,7 +98,7 @@ const StudentSignUp = () => {
                             SignUp As Student
                         </h1>
                         <p className='text-gray-700 text-sm mt-4 md:mx-4 text-center md:text-left'>
-                            Set up an account for your student and help them get started with their school portal.
+                           Set up an account and get started with your school portal.
                         </p>
                         <form className='flex flex-col mx-4' onSubmit={handleSubmit}>
                             <input name='Name' onChange={handleChange} value={FormData.Name} type="text" placeholder='Full Name' className='mt-8 border-gray-300 border-2 rounded-xl p-2 bg-[#f2f2f2] hover:border-[#2359de] hover:bg-white focus:bg-white focus:border-[#2359de] focus:outline-none' />
@@ -107,7 +107,7 @@ const StudentSignUp = () => {
                             <input name='Password' onChange={handleChange} value={FormData.Password} type="password" placeholder='Set Password' className='mt-4 border-gray-300 border-2 rounded-xl p-2 bg-[#f2f2f2] hover:border-[#2359de] hover:bg-white focus:bg-white focus:border-[#2359de] focus:outline-none' />
                             {error && <p className="mt-4 text-red-700">{error}</p>}
                             {message && <p className="mt-4 text-green-700">{message}</p>}
-                            <button className='mt-4 mb-12 rounded-xl p-2 text-white font-medium bg-[#2359de] shadow-2xl hover:opacity-80'>Create Account</button>
+                            <button className='mt-6 mb-12 rounded-xl p-2 text-white font-medium bg-[#2359de] shadow-2xl hover:opacity-80'>Create Account</button>
                         </form>
                     </div>
                 </div>
