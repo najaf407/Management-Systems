@@ -4,7 +4,7 @@ import { CalendarCheck, ArrowRight, BookOpenCheck, FileText, ShieldCheck, Clock,
 
 const TeacherOverView = () => {
     return (
-        <div className='w-full max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-0 my-6 sm:my-10'>
+        <div className='w-full mx-auto px-4 sm:px-6 lg:px-4 my-6 sm:my-10'>
 
             {/* Greeting */}
             <div>
@@ -43,9 +43,6 @@ const TeacherOverView = () => {
                             </div>
                             Upcoming Schedule
                         </h1>
-                        <button className='hidden sm:flex text-sm text-emerald-700 font-medium gap-1 items-center'>
-                            View All <ArrowRight className='size-3.5' />
-                        </button>
                     </div>
 
                     <div className="hidden sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-4 px-4 pb-2 text-emerald-700 text-xs font-semibold uppercase tracking-wide">
@@ -82,9 +79,8 @@ const TeacherOverView = () => {
                             </div>
                         ))}
                     </div>
-
-                    <button className='sm:hidden text-sm text-emerald-700 font-medium flex gap-1 items-center mt-4 mx-auto'>
-                        View Full Schedule <ArrowRight className='size-3.5' />
+                    <button className='text-sm text-emerald-700 font-medium flex gap-1 items-center mt-4 ml-auto'>
+                        View All <ArrowRight className='size-3.5' />
                     </button>
                 </div>
             </div>
@@ -99,9 +95,6 @@ const TeacherOverView = () => {
                             </div>
                             Students
                         </h1>
-                        <button className='hidden sm:flex text-sm text-[#2359de] font-medium gap-1 items-center'>
-                            View All <ArrowRight className='size-3.5' />
-                        </button>
                     </div>
 
                     <div className="hidden sm:grid grid-cols-[1fr_2fr_1fr_1fr] gap-4 px-4 pb-2 text-[#2359de] text-xs font-semibold uppercase tracking-wide">
@@ -139,7 +132,7 @@ const TeacherOverView = () => {
                         ))}
                     </div>
 
-                    <button className='sm:hidden text-sm text-[#2359de] font-medium flex gap-1 items-center mt-4 mx-auto'>
+                    <button className='text-sm text-[#2359de] font-medium flex gap-1 items-center mt-4 ml-auto'>
                         View All <ArrowRight className='size-3.5' />
                     </button>
                 </div>

@@ -1,7 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./src/db/db');
+const cors = require('cors');
+const studentRoutes = require('./src/routes/studentRoutes')
+
+const app = express();
 
 connectDB();
 
-express().listen(3000, ()=>{ console.log("Server is Running!") });
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/students', studentRoutes);
+
+app.listen(3000, ()=>{ console.log("Server is Running!") });

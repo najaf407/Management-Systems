@@ -1,7 +1,7 @@
 import React from 'react'
 import { Banknote, Settings, LogOut, Menu, X } from 'lucide-react'
 import StudentSidebar from './StudentSidebar'
-import LogoSvg from '../../Assets/Svgs/Logo.svg'
+import LogoSvg from '../../../Assets/Svgs/Logo.svg'
 import TeacherSidebar from './TeacherSideBar'
 import {useState} from 'react'
 

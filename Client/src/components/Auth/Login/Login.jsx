@@ -18,7 +18,7 @@ const Login = () => {
                         <img src={LoginSideImage} alt="" className='absolute inset-0 h-full w-full object-cover' />
                         <div className='absolute inset-0 bg-gradient-to-t from-slate-900/50 via-slate-900/30 to-slate-900/10'></div>
                         <div className='relative z-10 flex flex-col justify-between h-full w-full px-6 py-6'>
-                            <img src={LogoSvg} alt="" className='h-16 w-40 lg:h-24 lg:w-60' />
+                            <img src={LogoSvg} alt="" className='h-16 w-40 lg:h-24 lg:w-60'/>
                             <div>
                                 <h1 className='text-white text-2xl lg:text-4xl font-bold'>Your School, Your Digital Hub</h1>
                                 <p className='text-white text-sm mb-6 lg:mb-10 mt-3'>Everything you need to stay connected, organized, and engaged with your school community—all in one place.</p>
